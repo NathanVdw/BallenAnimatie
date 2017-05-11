@@ -32,7 +32,7 @@ public class BallenVeld {
 		if (cirkels.size() < getMaxAantalBallen()){
 			IBaan baan = new HorizontaleBaan(x,y);
 			Cirkel cirkel = new BewegendeCirkel(new  Punt(x,y),30,BAL_KLEUREN[cirkels.size()],1,baan,this);
-			if (!raaktRand(cirkel)){
+			if (!raaktRandSides(cirkel) && !raaktRandTop(cirkel)){
 				cirkels.add(cirkel);
 			}
 		}
@@ -67,11 +67,14 @@ public class BallenVeld {
 		return cirkels.get(volgNr);
 	}
 	
-	public boolean raaktRand(Cirkel cirkel){
-		return cirkel.getMiddelPunt().getX() - cirkel.getRadius() <= 0 || cirkel.getMiddelPunt().getX() + cirkel.getRadius() >= maxX ||
-			   cirkel.getMiddelPunt().getY() - cirkel.getRadius() <= 0 || cirkel.getMiddelPunt().getY() + cirkel.getRadius() >= maxY;	
-	}
+
 		
+	public boolean raaktRandTop(Cirkel cirkel){
+		return cirkel.getMiddelPunt().getY() - cirkel.getRadius() <= 0 || cirkel.getMiddelPunt().getY() + cirkel.getRadius() >= maxY;	
+	}
+	public boolean raaktRandSides(Cirkel cirkel){
+		return cirkel.getMiddelPunt().getX() - cirkel.getRadius() <= 0 || cirkel.getMiddelPunt().getX() + cirkel.getRadius() >= maxX;
+	}
 	public void init(){
 		cirkels.clear();
 	}

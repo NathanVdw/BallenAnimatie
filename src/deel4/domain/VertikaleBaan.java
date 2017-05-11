@@ -23,7 +23,13 @@ public class VertikaleBaan implements IBaan {
 	}
 
 	@Override
-	public void veranderRichting() {
+	public void veranderRichtingTop() {
 		naarOnder = !naarOnder;		
+	}
+
+	@Override
+	public void veranderRichtingSides() {
+		// TODO Auto-generated method stub
+		
 	}
 }

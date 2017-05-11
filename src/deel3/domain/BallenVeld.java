@@ -1,4 +1,4 @@
-package deel3.domain;
+ package deel3.domain;
 
 import java.awt.Color;
 import java.util.ArrayList;

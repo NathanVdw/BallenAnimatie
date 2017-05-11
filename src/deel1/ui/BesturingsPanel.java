@@ -22,7 +22,7 @@ public class BesturingsPanel extends JPanel{
 		this.add(new KnoppenPanel(ballenVeld));
 		//voeg besturingspanel voor iedere bal toe
 		for (int i = 0; i < 3;i++){
-			Color achtergrondKleur = Color.PINK;
+			Color achtergrondKleur = Color.GREEN;
 			int balNr = i+1;
 			this.add(new BesturingsPanelBal(ballenVeld,achtergrondKleur,balNr));
 		}	

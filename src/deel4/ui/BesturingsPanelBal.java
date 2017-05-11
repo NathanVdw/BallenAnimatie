@@ -20,6 +20,7 @@ import deel4.domain.BallenVeld;
 import deel4.domain.BewegendeCirkel;
 import deel4.domain.Cirkel;
 import deel4.domain.HorizontaleBaan;
+import deel4.domain.DiagonaleBaan;
 import deel4.domain.IBaan;
 import deel4.domain.VertikaleBaan;
 
@@ -29,8 +30,7 @@ public class BesturingsPanelBal extends JPanel{
 	private final static int MIN_SNELHEID =4;
 	private final static int START_SNELHEID =1;
 	//elke bal kan volgende banen hebben
-	private static final String[] banen = {"horizontaal","verticaal"};
-		
+	private static final String[] banen = {"horizontaal","verticaal","diagonaal"};
 	private JSpinner snelheidControl;
 	private JComboBox<String> baanControl;
 	
@@ -71,11 +71,13 @@ public class BesturingsPanelBal extends JPanel{
 	        		 if (banen[baanControl.getSelectedIndex()].equals("horizontaal")){
 	        			 baan = new HorizontaleBaan(cirkel.getMiddelPunt().getX(),cirkel.getMiddelPunt().getY());
 	        		 }
-	        		 else{
-	        			 if (banen[baanControl.getSelectedIndex()].equals("verticaal")){
+	        		 else if (banen[baanControl.getSelectedIndex()].equals("verticaal")){
 		        			baan = new VertikaleBaan(cirkel.getMiddelPunt().getX(),cirkel.getMiddelPunt().getY());
-		        		 }	        		 	 
-	        		 }	 
+		        		 }	
+	        		 else if (banen[baanControl.getSelectedIndex()].equals("diagonaal")){
+		        			baan = new DiagonaleBaan(cirkel.getMiddelPunt().getX(),cirkel.getMiddelPunt().getY());
+		        		 }	
+	        		 	 
 	        		 cirkel.setBaan(baan);
 	        	 }	 
 	         }

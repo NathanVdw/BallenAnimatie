@@ -33,9 +33,15 @@ public  class BewegendeCirkel extends Cirkel{
 		//bal moet in ballenveld bewegen (indien rand raakt -> verander richting
 		interneKlok++;
 		if (interneKlok >= snelheid){
-			if (ballenVeld.raaktRand(this)){
-				baan.veranderRichting();
+			if (ballenVeld. raaktRandTop(this)){
+				baan.veranderRichtingTop();
 			}
+			else if (ballenVeld. raaktRandSides(this)){
+				baan.veranderRichtingSides();
+			}
+
+			
+			
 			interneKlok = 0;
 			this.getMiddelPunt().setX(baan.getX());
 			this.getMiddelPunt().setY(baan.getY());

@@ -24,8 +24,16 @@ public class HorizontaleBaan implements IBaan {
 	}
 
 	@Override
-	public void veranderRichting() {
+	public void veranderRichtingSides() {
 		naarRechts = !naarRechts;		
 	}
+
+	@Override
+	public void veranderRichtingTop() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 
 }
